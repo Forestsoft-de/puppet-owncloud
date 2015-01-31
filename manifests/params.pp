@@ -6,8 +6,8 @@
 class owncloud::params {
   case $::operatingsystem {
     'Ubuntu': {
-      $datadirectory = '/var/www/owncloud/data'
-      $documentroot  = '/var/www/owncloud'
+      $default_docroot  = '/var/www/owncloud'
+      $datadirectory   = '/var/www/owncloud/data'
       $package_name  = 'owncloud'
       $service_name  = 'owncloud'
       $www_user      = 'www-data'

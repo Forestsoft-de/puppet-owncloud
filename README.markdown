@@ -274,6 +274,11 @@ Set the path of the certificate key file, must use the absolute path.
 
 Configures the virtual host to install if `manage_apache` or `manage_vhost` are set to true. At this time there is no support for Apache server aliases. Defaults to `owncloud.${::domain}`
 
+##### `custom_docroot`
+
+Configure a custom path where owncloud should accessable by the Webserver 
+
+
 ## Reference
 
 ### Classes

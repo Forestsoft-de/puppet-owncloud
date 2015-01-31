@@ -22,6 +22,7 @@ class owncloud (
   $ssl_key         = undef,
   $url             = "owncloud.${::domain}",
   $datadirectory   = $owncloud::params::datadirectory,
+  $custom_docroot  = undef,
 ) inherits owncloud::params {
 
   validate_bool($manage_apache)
@@ -32,6 +33,13 @@ class owncloud (
   validate_bool($ssl)
 
   validate_re($db_type, '^mysql$', '$database must be \'mysql\'')
+
+  if ($custom_doc_root) {
+    $documentroot = $custom_docroot
+  } else {
+    $documentroot = $defaul_docroot
+  }
+
 
   if $ssl {
     validate_absolute_path($ssl_cert, $ssl_key)
